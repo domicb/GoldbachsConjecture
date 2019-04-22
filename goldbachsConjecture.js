@@ -25,7 +25,7 @@ function getFirstPrimes(n) {
 
   var primes = [];
 
-  for (var i = 1; i <= n; i++) {
+  for (var i = 1; i < Math.sqrt(n); i++) {
 
     if (isPrime(i)) {
       primes.push(i);
@@ -41,9 +41,9 @@ function isPrime(n) {
     return false;
   }
 
-  for (var potentialDivisor = 2; potentialDivisor < n; potentialDivisor++) {
+  for (var i = 2; i < n; i++) {
 
-    if (n % potentialDivisor === 0) {
+    if (n % i === 0) {
       return false;
     }
   }
